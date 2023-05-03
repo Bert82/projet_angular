@@ -1,1 +1,19 @@
+    <div class="m-0">
+        <form [formGroup]="loginForm" (ngSubmit)="login()">
 
+            <div class="flex flex-column gap-2">
+                <label htmlFor="login" class="align-self-start">Login</label>
+                <input pInputText id="login" aria-describedby="login-help" formControlName="login" class="align-self-start" />
+            </div>
+
+            <div class="flex flex-column gap-2 mt-2">
+                <label htmlFor="password" class="align-self-start">Password</label>
+                <p-password id="login" formControlName="password" [toggleMask]="true" class="align-self-start"></p-password>
+            </div>
+
+            <div class="align-self-start mt-2">
+                <p-button type="submit" [disabled]="!loginForm.valid" label="Se connecter"></p-button>
+            </div>
+        </form>
+    </div>
+    <p-toast></p-toast>
