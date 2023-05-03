@@ -1,8 +1,7 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
 import { LocalStorageServiceService } from '../local-storage-service.service';
-
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -13,11 +12,12 @@ import { LocalStorageServiceService } from '../local-storage-service.service';
 export class RegistrationComponent {
   value: string
   registrationForm = new FormGroup({
-    firstName: new FormControl(),
-    lastName: new FormControl(),
-    birthday: new FormControl(),
-    login: new FormControl(),
-    password: new FormControl(),
+    firstName: new FormControl('',[Validators.required]),
+    lastName: new FormControl('',[Validators.required]),
+    birthday: new FormControl('',[Validators.required]),
+    email: new FormControl('',[Validators.required]),
+    login: new FormControl('',[Validators.required]),
+    password: new FormControl('',[Validators.required]),
   })
 
 constructor(

@@ -1,35 +1,96 @@
-<div class="card">
-    <h5>S'enrefistrer</h5>
-    <div class="formgrid grid">
-        <div class="field col-12 md:col-6">
-            <label for="firstname6">Firstname</label>
-            <input id="firstname6" type="text" class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full">
+<div class="card flex justify-content-center">
+  <p-card header="S'enregistrer" [style]="{ width: '660px' }">
+    <form [formGroup]="registrationForm" (ngSubmit)="register()">
+      <div class="card">
+        <div class="field grid">
+          <label for="firstname3" class="col-fixed" style="width: 100px"
+            >Nom</label
+          >
+          <div class="col">
+            <input
+              id="firstname3"
+              type="text"
+              formControlName="firstName"
+              class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full"
+            />
+          </div>
         </div>
-        <div class="field col-12 md:col-6">
-            <label for="lastname6">Lastname</label>
-            <input id="lastname6" type="text" class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full">
+        <div class="field grid">
+          <label for="lastname3" class="col-fixed" style="width: 100px"
+            >Prénom</label
+          >
+          <div class="col">
+            <input
+              id="lastname3"
+              type="text"
+              formControlName="lastName"
+              class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full"
+            />
+          </div>
         </div>
-        <div class="field col-12">
-            <label for="address">Address</label>
-            <textarea id="address" type="text" rows="4" class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full"></textarea>
+        <div class="field grid">
+          <label for="birthday" class="col-fixed" style="width: 100px"
+            >Date de Naissance</label
+          >
+          <div class="col">
+            <input
+              id="birthday"
+              type="text"
+              formControlName="birthday"
+              class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full"
+            />
+          </div>
         </div>
-        <div class="field col-12 md:col-6">
-            <label for="city">City</label>
-            <input id="city" type="text" class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full">
+        <div class="field grid">
+          <label for="email" class="col-fixed" style="width: 100px"
+            >email</label
+          >
+          <div class="col">
+            <input
+              id="email"
+              type="text"
+              formControlName="email"
+              class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full"
+            />
+          </div>
         </div>
-        <div class="field col-12 md:col-3">
-            <label for="state">State</label>
-            <select id="state" class="w-full text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round outline-none focus:border-primary" style="appearance: auto">
-                <option>Arizona</option>
-                <option>California</option>
-                <option>Florida</option>
-                <option>Ohio</option>
-                <option>Washington</option>
-            </select>
+        <div class="field grid">
+          <label for="login" class="col-fixed" style="width: 100px"
+            >Login</label
+          >
+          <div class="col mt-5" >
+            <input
+              id="login"
+              type="text"
+              formControlName="login"
+              class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full"
+            />
+          </div>
         </div>
-        <div class="field col-12 md:col-3">
-            <label for="zip">Zip</label>
-            <input id="zip" type="text" class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full">
+        <div class="field grid">
+          <label for="password" class="col-fixed" style="width: 100px"
+            >password</label
+          >
+          <div class="col">
+            <input
+              id="password"
+              type="text"
+              formControlName="password"
+              class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full"
+            />
+          </div>
         </div>
-    </div>
+
+        <div class="align-self-start mt-2">
+          <p-button type="submit" [disabled]="!registrationForm.valid" label="S'enregistrer" icon="pi pi-check"></p-button>
+          <p-button
+            label="Annuler"
+            icon="pi pi-times"
+            styleClass="p-button-secondary"
+            [style]="{ 'margin-left': '.5em' }"
+          ></p-button>
+        </div>
+      </div>
+    </form>
+  </p-card>
 </div>

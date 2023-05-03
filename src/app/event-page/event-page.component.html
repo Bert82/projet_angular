@@ -1,3 +1,54 @@
-<h1>Voici les différents évènements</h1>
+<h1>Voici les différents évènements proposés</h1>
 
-<a routerLink="/inscription">inscription</a>
+<div class="card">
+  <div
+    class="flex align-items-stretch flex-wrap card-container blue-container"
+    style="min-height: 200px"
+  >
+    <div class="px-4">
+      <p-card header="Trek" subheader="Mont-blanc" [style]="{ width: '260px' }">
+        <ng-template pTemplate="header">
+          <img alt="Card1" src="assets/img/trek.jpg" height="180px"/>
+        </ng-template>
+
+        <ng-template pTemplate="footer">
+          <p-button label="Inscription" routerLink="/inscription" icon="pi pi-check"></p-button>
+        </ng-template>
+      </p-card>
+    </div>
+    <div class="px-4">
+      <p-card header=" Marathon" subheader="Paris" [style]="{ width: '260px' }">
+        <ng-template pTemplate="header">
+          <img alt="Card2" src="assets/img/course.png" height="180px"/>
+        </ng-template>
+        <p>marathon</p>
+        <ng-template pTemplate="footer">
+          <p-button label="Inscription" routerLink="/inscription" icon="pi pi-check"></p-button>
+        </ng-template>
+      </p-card>
+    </div>
+    <div class="card">
+      <div
+        class="flex align-items-stretch flex-wrap card-container blue-container"
+        style="min-height: 200px"
+      >
+        <div class="px-4">
+          <p-card
+            header="Rando"
+            subheader="en foret"
+            [style]="{ width: '260px' }"
+          >
+            <ng-template pTemplate="header">
+              <img alt="Card1" src="assets/img/rando.jpg" height="180px" />
+            </ng-template>
+            <p>dans les Ardennes</p>
+
+            <ng-template pTemplate="footer">
+              <p-button label="Inscription" routerLink="/inscription" icon="pi pi-check"></p-button>
+            </ng-template>
+          </p-card>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

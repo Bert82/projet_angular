@@ -30,7 +30,7 @@ export class LoginComponent {
     const userForm: any = this.loginForm.getRawValue();
     const exists = this._authService.login(userForm)
     if (exists) {
-       this._router.navigate(['/registation']);
+       this._router.navigate(['/event']);
     } else {
       this.show()
     }
