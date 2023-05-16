@@ -9,6 +9,8 @@ import { Router } from '@angular/router';
   templateUrl: './registration.component.html',
   styleUrls: ['./registration.component.css']
 })
+
+
 export class RegistrationComponent {
   value: string
   registrationForm = new FormGroup({
@@ -20,6 +22,7 @@ export class RegistrationComponent {
     password: new FormControl('',[Validators.required]),
   })
 
+  
 constructor(
   private readonly localStorageService: LocalStorageServiceService,
   private readonly router: Router

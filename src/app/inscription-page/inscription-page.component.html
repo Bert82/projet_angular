@@ -1,3 +1,125 @@
 <h1>inscription</h1>
 
-<a routerLink="/event">évènement</a>
+
+<div class="card flex justify-content-center">
+    <p-card header="Inscription" [style]="{ width: '660px' }">
+      <form [formGroup]="registrationForm" (ngSubmit)="register()">
+        <div class="card">
+          <div class="field grid">
+            <label for="firstname3" class="col-fixed" style="width: 100px"
+              >Nom</label
+            >
+            <div class="col">
+              <input
+                id="firstname3"
+                type="text" 
+                formControlName="firstName"
+                class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full"
+              />
+            </div>
+          </div>
+          <div class="field grid">
+            <label for="lastname3" class="col-fixed" style="width: 100px"
+              >Prénom</label
+            >
+            <div class="col">
+              <input
+                id="lastname3"
+                type="text"
+                formControlName="lastName"
+                class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full"
+              />
+            </div>
+          </div>
+          <div class="field grid">
+            <label for="birthday" class="col-fixed" style="width: 100px"
+              >Date de Naissance</label
+            >
+            <div class="col">
+              <input
+                id="birthday"
+                type="date"
+                formControlName="birthday"
+                class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full"
+              />
+            </div>
+          </div>
+          <div class="field grid">
+            <label for="email" class="col-fixed" style="width: 100px"
+              >email</label
+            >
+            <div class="col">
+              <input
+                id="email"
+                type="text"
+                formControlName="email"
+                class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full"
+              />
+            </div>
+          </div>
+          <div class="field grid">
+            <label for="adresse" class="col-fixed" style="width: 100px"
+              >Adresse</label
+            >
+            <div class="col" >
+              <input
+                id="adresse"
+                type="text"
+                formControlName="adresse"
+                class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full"
+              />
+            </div>
+          </div>
+          <div class="field grid">
+            <label for="ville" class="col-fixed" style="width: 100px"
+              >Ville</label
+            >
+            <div class="col">
+              <input
+                id="ville"
+                type="text"
+                formControlName="ville"
+                class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full"
+              />
+            </div>
+          </div>
+
+          <div class="field grid">
+            <label for="evenement" class="col-fixed" style="width: 100px">Evènement</label>
+            <div class="col">
+            <select id="state" class="w-full text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round outline-none focus:border-primary" style="appearance: auto">
+                <option>Treck</option>
+                <option>Marathon</option>
+                <option>Rando</option>
+            </select>
+        </div>
+    </div>
+        
+          <div class="align-self-start mt-2">
+            <p-button type="submit" [disabled]="!registrationForm.valid" label="S'inscrire" (click)="confirm()" icon="pi pi-check"></p-button>
+            <p-button
+              label="Retour aux évèmenets"
+              routerLink="/event"
+              icon="pi pi-times"
+              styleClass="p-button-secondary"
+              [style]="{ 'margin-left': '.5em' }"
+            ></p-button>
+          </div>
+        </div>
+      </form>
+    </p-card>
+  </div>
+  
+  <div class="card flex justify-content-center">
+    <p-toast></p-toast>
+    <p-confirmDialog [style]="{width: '50vw'}">
+        <ng-template pTemplate="header">
+            <h3>Validation de l'insctiption</h3>
+        </ng-template>
+        <ng-template pTemplate="footer">
+          <button type="button" pButton icon="pi pi-check" label="Valider
+          " (click)="valide()"></button>
+        </ng-template>
+    </p-confirmDialog>
+   
+</div>

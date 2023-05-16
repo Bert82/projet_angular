@@ -5,6 +5,8 @@ import { InputTextModule } from 'primeng/inputtext';
 import { PasswordModule } from 'primeng/password';
 import { ToastModule } from 'primeng/toast';
 import { TabMenuModule } from 'primeng/tabmenu';
+import { CalendarModule } from 'primeng/calendar';
+import { ConfirmDialogModule } from 'primeng/confirmdialog';
 
 @NgModule({
   declarations: [],
@@ -14,7 +16,9 @@ import { TabMenuModule } from 'primeng/tabmenu';
     InputTextModule,
     PasswordModule,
     ToastModule,
-    TabMenuModule
+    TabMenuModule,
+    CalendarModule,
+    ConfirmDialogModule
   ],
   exports:[
     ButtonModule,
@@ -22,7 +26,10 @@ import { TabMenuModule } from 'primeng/tabmenu';
     InputTextModule,
     PasswordModule,
     ToastModule,
-    TabMenuModule
+    TabMenuModule,
+    CalendarModule,
+    CalendarModule,
+    ConfirmDialogModule
 
   ]
 

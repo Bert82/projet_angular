@@ -35,7 +35,7 @@
           <div class="col">
             <input
               id="birthday"
-              type="text"
+              type="date"
               formControlName="birthday"
               class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full"
             />
@@ -85,6 +85,7 @@
           <p-button type="submit" [disabled]="!registrationForm.valid" label="S'enregistrer" icon="pi pi-check"></p-button>
           <p-button
             label="Annuler"
+            routerLink="/inscription"
             icon="pi pi-times"
             styleClass="p-button-secondary"
             [style]="{ 'margin-left': '.5em' }"

@@ -47,7 +47,7 @@ export class AuthService {
   }
 
   login(user: Login): boolean {
-    const _user: User | undefined = this._users
+    const _user: User | undefined = (this.localStorageService.getItem('users') || [])
       .find((u: any) => u.login === user.login && u.password === user.password);
 
     if (!_user) {
