@@ -7,8 +7,11 @@ export interface Login {
 }
 
 export interface User {
+  
   firstName: string,
   lastName: string,
+  birthday: string,
+  email: string,
   login: string,
   password: string,
 }
@@ -29,9 +32,14 @@ export class AuthService {
     }
   }
 
+  get currentUser(){
+    return this._currentUser;
+  }
+
   constructor(
     private readonly localStorageService: LocalStorageServiceService
   ) {
+ 
     this._users = this.localStorageService.getItem('users') || [];
     this._currentUser = this.localStorageService.getItem('currentUser');
   }

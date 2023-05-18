@@ -5,15 +5,13 @@ import { Router } from '@angular/router';
 import { ConfirmationService, MessageService} from 'primeng/api';
 import { AuthService } from '../services/auth.service';
 
-
-
 @Component({
-  selector: 'app-inscription-page',
-  templateUrl: './inscription-page.component.html',
-  styleUrls: ['./inscription-page.component.css'],
+  selector: 'app-inscription-rando-page',
+  templateUrl: './inscription-rando-page.component.html',
+  styleUrls: ['./inscription-rando-page.component.css'],
   providers: [ConfirmationService, MessageService]
 })
-export class InscriptionPageComponent implements OnInit{
+export class InscriptionRandoPageComponent implements OnInit{
   value: string
   inscriptionForm = new FormGroup({
     firstName: new FormControl('',[Validators.required]),
@@ -35,7 +33,6 @@ constructor(
   
 ngOnInit(){ 
     const currentUser = this._authService.currentUser;
-    console.log(currentUser)
       this.inscriptionForm.patchValue({
         firstName: currentUser?.firstName,
         lastName: currentUser?.lastName,

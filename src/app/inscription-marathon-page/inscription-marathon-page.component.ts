@@ -5,15 +5,13 @@ import { Router } from '@angular/router';
 import { ConfirmationService, MessageService} from 'primeng/api';
 import { AuthService } from '../services/auth.service';
 
-
-
 @Component({
-  selector: 'app-inscription-page',
-  templateUrl: './inscription-page.component.html',
-  styleUrls: ['./inscription-page.component.css'],
+  selector: 'app-inscription-marathon-page',
+  templateUrl: './inscription-marathon-page.component.html',
+  styleUrls: ['./inscription-marathon-page.component.css'],
   providers: [ConfirmationService, MessageService]
 })
-export class InscriptionPageComponent implements OnInit{
+export class InscriptionMarathonPageComponent implements OnInit {
   value: string
   inscriptionForm = new FormGroup({
     firstName: new FormControl('',[Validators.required]),
@@ -73,5 +71,4 @@ confirm() {
 valide() {
   this.router.navigate(['/event']);
 }
-
 }
