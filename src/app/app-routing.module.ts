@@ -37,7 +37,7 @@ const routes: Routes = [
     HomePageComponent,
     RegistrationComponent,
     LoginComponent,
-    ParticipantsPageComponent
+    ParticipantsPageComponent,
     ],
   imports: [RouterModule.forRoot(routes), ReactiveFormsModule, FormsModule, CommonModule, SharedModule],
   exports: [RouterModule],

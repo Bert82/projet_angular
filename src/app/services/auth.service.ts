@@ -14,6 +14,8 @@ export interface User {
   email: string,
   login: string,
   password: string,
+  adresse: string,
+  ville: string
 }
 
 @Injectable({

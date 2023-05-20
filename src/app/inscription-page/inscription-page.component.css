@@ -1,0 +1,5 @@
+.component-class {
+    background-image: url("src/assets/img/home.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+  }

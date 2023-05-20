@@ -15,8 +15,27 @@ export class HeaderComponent implements OnInit {
       this.items = [
           { label: 'Home', icon: 'pi pi-fw pi-home', routerLink:'/home' },
           { label: 'Evènement', routerLink:'/event' },
-          { label: 'Insription', routerLink:'/inscription'},
+          { label: 'Insription', 
+          items: [
+            {
+                label: 'Treck',
+                icon: 'pi pi-fw pi-align-left',
+                routerLink:'/inscription'
+            },
+            {
+                label: 'Marathon',
+                icon: 'pi pi-fw pi-align-right',
+                routerLink:'/inscription-marathon'
+            },
+            {
+                label: 'Rando',
+                icon: 'pi pi-fw pi-align-center',
+                routerLink:'/inscription-rando'
+            }
+          ]
+          },
           { label: 'S\'enregistrer', routerLink:'/registration' },
+          { label: 'Participants', routerLink:'/participants'},
         ];
 
         this.activeItem = this.items[0];

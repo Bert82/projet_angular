@@ -7,6 +7,9 @@ import { ToastModule } from 'primeng/toast';
 import { TabMenuModule } from 'primeng/tabmenu';
 import { CalendarModule } from 'primeng/calendar';
 import { ConfirmDialogModule } from 'primeng/confirmdialog';
+import { TableModule } from 'primeng/table';
+import { CheckboxModule } from 'primeng/checkbox';
+import { MenubarModule } from 'primeng/menubar';
 
 @NgModule({
   declarations: [],
@@ -18,7 +21,11 @@ import { ConfirmDialogModule } from 'primeng/confirmdialog';
     ToastModule,
     TabMenuModule,
     CalendarModule,
-    ConfirmDialogModule
+    ConfirmDialogModule,
+    TableModule,
+    CheckboxModule,
+    MenubarModule
+    
   ],
   exports:[
     ButtonModule,
@@ -29,7 +36,11 @@ import { ConfirmDialogModule } from 'primeng/confirmdialog';
     TabMenuModule,
     CalendarModule,
     CalendarModule,
-    ConfirmDialogModule
+    ConfirmDialogModule,
+    TableModule,
+    CheckboxModule,
+    MenubarModule
+    
 
   ]
 

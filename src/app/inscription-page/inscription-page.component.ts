@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { LocalStorageServiceService } from '../local-storage-service.service';
 import { Router } from '@angular/router';
 import { ConfirmationService, MessageService} from 'primeng/api';
@@ -22,13 +22,13 @@ export class InscriptionPageComponent implements OnInit{
     email: new FormControl('',[Validators.required]),
     adresse: new FormControl('',[Validators.required]),
     ville: new FormControl('',[Validators.required]),
-    sexe: new FormControl('',[Validators.required]),
+   // sexe: new FormControl('false',[Validators.requiredTrue]),
   })
 
+  
 constructor(
   private readonly localStorageService: LocalStorageServiceService,
   private readonly router: Router,
-  private confirmationService: ConfirmationService, private messageService: MessageService,
   private readonly _authService: AuthService,
   
 ) { }
@@ -45,33 +45,16 @@ ngOnInit(){
       });
 }
 
-register() {
+OnSubmit() {
   if (this.inscriptionForm.valid) {
-    const newUser = this.inscriptionForm.getRawValue()
     const users = this.localStorageService.getItem('users') || [];
-    //const existingUser = users.some((u: any) => u.login == newUser.login);
-    //if (existingUser) {
-    //  alert('Cet utilisateur existe déjà ');
-    //  return;
-    // }
-    users.push(users);
+    
+    users.push(this.inscriptionForm.value);
     this.localStorageService.setItem('users', users);
     this.inscriptionForm.reset();
     this.router.navigate(['/event']);
     }
 }
 
-confirm() {
-  this.confirmationService.confirm({
-      message: 'Félicitation vous êtes inscrit',
-      icon: 'pi pi-exclamation-triangle',
-    
-      
-  });
-}
-
-valide() {
-  this.router.navigate(['/event']);
-}
 
 }
