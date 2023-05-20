@@ -1,1 +1,23 @@
-<p>participants-page works!</p>
+<div class="card">
+  <p-table  >
+    <ng-template pTemplate="header">
+      <tr>
+        <th>Nom</th>
+        <th>Prémon</th>
+        <th>Date de Naissance </th>
+        <th>email</th>
+        <th>Ville</th>
+        <th>Evènement</th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-currentUser>
+      <tr>
+        <td>{{ currentUser.firstname }}</td>
+        <td>{{ currentUser.lastname }}</td>
+        <td>{{ currentUser.birthday }}</td>
+        <td>{{ currentUser.email }}</td>
+        <td>{{ currentUser.ville }}</td>
+      </tr>
+    </ng-template>
+  </p-table>
+</div>
