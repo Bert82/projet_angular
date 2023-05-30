@@ -20,7 +20,7 @@ export class InscriptionMarathonPageComponent implements OnInit {
     email: new FormControl('',[Validators.required]),
     adresse: new FormControl('',[Validators.required]),
     ville: new FormControl('',[Validators.required]),
-    sexe: new FormControl('',[Validators.required]),
+    
   })
 
 constructor(
@@ -47,11 +47,7 @@ register() {
   if (this.inscriptionForm.valid) {
     const newUser = this.inscriptionForm.getRawValue()
     const users = this.localStorageService.getItem('users') || [];
-    //const existingUser = users.some((u: any) => u.login == newUser.login);
-    //if (existingUser) {
-    //  alert('Cet utilisateur existe déjà ');
-    //  return;
-    // }
+ 
     users.push(users);
     this.localStorageService.setItem('users', users);
     this.inscriptionForm.reset();

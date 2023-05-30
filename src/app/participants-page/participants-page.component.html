@@ -1,5 +1,5 @@
 <div class="card">
-  <p-table  >
+  <p-table [value]="currentUser" [tableStyle]="{ 'min-width': '50rem' }" >
     <ng-template pTemplate="header">
       <tr>
         <th>Nom</th>
@@ -10,13 +10,14 @@
         <th>Evènement</th>
       </tr>
     </ng-template>
-    <ng-template pTemplate="body" let-currentUser>
-      <tr>
-        <td>{{ currentUser.firstname }}</td>
-        <td>{{ currentUser.lastname }}</td>
-        <td>{{ currentUser.birthday }}</td>
-        <td>{{ currentUser.email }}</td>
-        <td>{{ currentUser.ville }}</td>
+    <ng-template pTemplate="body" let-user>
+      <tr *ngFor="let user of currentUser">
+        <td>{{ user.firstName}}</td>
+        <td>{{ user.lastName }}</td>
+        <td>{{ user.birthday }}</td>
+        <td>{{ user.email }}</td>
+        <td>{{ user.ville }}</td>
+        <td>{{ user.event }}</td>
       </tr>
     </ng-template>
   </p-table>

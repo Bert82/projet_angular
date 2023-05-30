@@ -29,17 +29,7 @@
             />
           </div>
         </div>
-        <!--
-        <div class="field grid">
-          <label for="sexe" class="col-fixed" style="width: 100px">sexe</label>
-          <div class="col">
-            
-            <p-checkbox name="sexe" value="M" label="M" ></p-checkbox>
-            <p-checkbox name="sexe" value="F" label="F" ></p-checkbox>
-            
-          </div>
-        </div>
-          -->
+        
         <div class="field grid">
           <label for="birthday" class="col-fixed" style="width: 100px"
             >Date de Naissance</label
@@ -87,6 +77,20 @@
             <input
               id="ville"
               type="text"
+              formControlName="ville"
+              class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full"
+            />
+          </div>
+        </div>
+        <div class="field grid">
+          <label for="event" class="col-fixed" style="width: 100px"
+            >Dicipline</label
+          >
+          <div class="col">
+            <input
+              id="event"
+              type="text"
+              placeholder="Treck" readonly
               formControlName="ville"
               class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full"
             />

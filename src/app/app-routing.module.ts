@@ -12,6 +12,7 @@ import { LoginComponent } from './login/login.component';
 import { RegistrationComponent } from './registration/registration.component';
 import { AuthGuard } from './auth.guard';
 import { SharedModule } from './shared/shared.module';
+import { LogoutComponent } from './logout/logout.component';
 
 
 const routes: Routes = [
@@ -24,7 +25,8 @@ const routes: Routes = [
   { path: 'inscription-marathon', component: InscriptionMarathonPageComponent, canActivate:[AuthGuard] },
   { path: 'inscription-rando', component: InscriptionRandoPageComponent, canActivate:[AuthGuard] },
   { path: 'event', component: EventPageComponent, canActivate:[AuthGuard] },
-  { path: 'participants', component: ParticipantsPageComponent, canActivate: [AuthGuard]}
+  { path: 'participants', component: ParticipantsPageComponent, canActivate: [AuthGuard]},
+  {path: 'logout', component: LogoutComponent}
 
 ];
 
@@ -38,6 +40,7 @@ const routes: Routes = [
     RegistrationComponent,
     LoginComponent,
     ParticipantsPageComponent,
+    LogoutComponent
     ],
   imports: [RouterModule.forRoot(routes), ReactiveFormsModule, FormsModule, CommonModule, SharedModule],
   exports: [RouterModule],

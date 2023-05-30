@@ -22,9 +22,8 @@ export class InscriptionPageComponent implements OnInit{
     email: new FormControl('',[Validators.required]),
     adresse: new FormControl('',[Validators.required]),
     ville: new FormControl('',[Validators.required]),
-   // sexe: new FormControl('false',[Validators.requiredTrue]),
+   
   })
-
   
 constructor(
   private readonly localStorageService: LocalStorageServiceService,
@@ -46,6 +45,7 @@ ngOnInit(){
 }
 
 OnSubmit() {
+  
   if (this.inscriptionForm.valid) {
     const users = this.localStorageService.getItem('users') || [];
     
