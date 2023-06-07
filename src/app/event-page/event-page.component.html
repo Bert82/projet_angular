@@ -1,59 +1,22 @@
-<h1>Voici les différents évènements proposés</h1>
+<h1 class='center'>Evènements</h1>
 
-<div class="card">
-  <div
-    class="flex align-items-stretch flex-wrap card-container blue-container"
-    style="min-height: 200px"
-  >
-    <div class="px-4">
-      <p-card header="Trek" subheader="Mont-blanc" [style]="{ width: '260px' }">
-        <ng-template pTemplate="header">
-          <img alt="Card1" src="assets/img/trek.jpg" height="180px"/>
-        </ng-template>
-        <p>Le Mont-Blanc attire les voyageurs de tous horizons. Point culminant des Alpes à 4 810 mètres, il se parcourt de plusieurs façons, et faire le tour du Mont-Blanc se révèle plus facile qu'on ne le pense. Vous pouvez même emmener votre tribu randonner avec des ânes vers le toit de l'Europe ! <br><br>A vous les richesses de ce massif mythique entre France et Italie. La version intégrale sur les sentiers en balcon est également une option ; quant aux plus aguerris, ils choisiront le raid ou le trail du Mont-Blanc.
-        
-        </p>
-        <ng-template pTemplate="footer">
-          <p-button label="Inscription" routerLink="/inscription" icon="pi pi-check"></p-button>
-        </ng-template>
-      </p-card>
+<div class='container'>
+<div class="row">
+<div *ngFor='let event of EventList' class="col s6 m4">
+  <div (click)="eventDetail(event)" class="card horizontal">
+    <div class="card-image">
+      <img [src]="event.picture">
     </div>
-    <div class="px-4">
-      <p-card header=" Marathon" subheader="Paris" [style]="{ width: '260px' }">
-        <ng-template pTemplate="header">
-          <img alt="Card2" src="assets/img/course.png" height="180px"/>
-        </ng-template>
-        <p>Le 47ème marathon international de Paris aura lieu le 07 avril 2024. Le Schneider Electric Marathon de Paris offre une occasion unique de s’approprier la ville, en participant à une des courses les plus relevées sur la distance mythique de 42,195 km. Le Schneider Electric Marathon de Paris est, aujourd’hui, l’un des plus importants marathons du monde, caractérisé par l’importance de son peloton comme par les performances réalisées. Chaque finisher se crée, à coup sûr, un souvenir mémorable.
-        </p>
-        <ng-template pTemplate="footer">
-          <p-button label="Inscription" routerLink="/inscription-marathon" icon="pi pi-check"></p-button>
-        </ng-template>
-      </p-card>
-    </div>
-    <div class="card">
-      <div
-        class="flex align-items-stretch flex-wrap card-container blue-container"
-        style="min-height: 200px"
-      >
-        <div class="px-4">
-          <p-card
-            header="Rando"
-            subheader="en foret"
-            [style]="{ width: '260px' }"
-          >
-            <ng-template pTemplate="header">
-              <img alt="Card1" src="assets/img/rando.jpg" height="180px" />
-            </ng-template>
-            <p>Les forêts des Ardennes. Le pluriel s'impose. Seulement déchirées par les vallées des fleuves et rivières où les hommes ont bâti villes et citadelles, nos forêts ont gardé leurs visages multiples qui fascinaient déjà Jules César.
-
-              Enveloppant les crêtes, couvrant les coteaux abrupts ou formant des océans de vert sur les plaines et plateaux, nos forêts des Ardennes sont tour à tour et parfois tout à la fois légendaires, nourricières, peuplées de noble gibier ou faussement désertiques. Les forêts, à la fois le coeur et le poumon de tout un territoire.</p>
-
-            <ng-template pTemplate="footer">
-              <p-button label="Inscription" routerLink="/inscription-rando" icon="pi pi-check"></p-button>
-            </ng-template>
-          </p-card>
-        </div>
+    <div class="card-stacked">
+      <div class="card-content">
+        <p>{{ event.name }}</p>
+        <p><small>{{ event.created | date }}</small></p><br><br>
+        <p-button type="success" label="s'inscrire" routerLink="/inscription"></p-button>
+       
       </div>
     </div>
   </div>
+</div>
+</div>
+<p-button type="submit" label="créer un évènement" routerLink=''></p-button>
 </div>

@@ -13,7 +13,7 @@ import { AuthService } from '../services/auth.service';
 })
 export class ParticipantsPageComponent implements OnInit {
 
-  currentUser: any[] = [];
+  users: any[] = [];
 
   constructor(
     private readonly localStorageService: LocalStorageServiceService,
@@ -23,10 +23,10 @@ export class ParticipantsPageComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    const localStorageData = this.localStorageService.getItem('currentUser');
+    const localStorageData = this.localStorageService.getItem('users');
     console.log(localStorageData )
     if (localStorageData) {
-      this.currentUser = [localStorageData];
+      this.users = localStorageData;
     }
   }
 

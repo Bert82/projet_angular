@@ -114,6 +114,9 @@
         </div>
       </div>
     </form>
+    <div *ngFor="let data of formData">
+      <p>{{ data.firstName }} - {{ data.lastName }} - {{ data.email }} - </p>
+    </div>
   </p-card>
 </div>
 </div>
