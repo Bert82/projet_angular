@@ -25,7 +25,7 @@ export const Evenement: Event[] = [
         distance: 42,
         lieu: "Paris",
         picture: "/assets/img/course.png",
-        types: ["Matethon"],
+        types: ["Marathon"],
         created: new Date()
     },
    

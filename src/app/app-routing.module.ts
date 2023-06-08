@@ -14,6 +14,8 @@ import { AuthGuard } from './auth.guard';
 import { SharedModule } from './shared/shared.module';
 import { LogoutComponent } from './logout/logout.component';
 import { DetailEventPageComponent } from './detail-event-page/detail-event-page.component';
+import { EditEventComponent } from './edit-event/edit-event.component';
+import { EventFormComponent } from './event-form/event-form.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/envent', pathMatch: 'full' },
@@ -21,13 +23,16 @@ const routes: Routes = [
   { path: 'registration', component: RegistrationComponent },
   
   { path: 'home', component: HomePageComponent},
-  { path: 'inscription', component: InscriptionPageComponent, canActivate:[AuthGuard] },
-  { path: 'inscription-marathon', component: InscriptionMarathonPageComponent, canActivate:[AuthGuard] },
-  { path: 'inscription-rando', component: InscriptionRandoPageComponent, canActivate:[AuthGuard] },
-  { path: 'event', component: EventPageComponent, canActivate:[AuthGuard] },
-  { path: 'participants', component: ParticipantsPageComponent, canActivate: [AuthGuard]},
+  { path: 'inscription', component: InscriptionPageComponent},
+  { path: 'inscription-marathon', component: InscriptionMarathonPageComponent },
+  { path: 'inscription-rando', component: InscriptionRandoPageComponent },
+  { path: 'event', component: EventPageComponent },
+  { path: 'participants', component: ParticipantsPageComponent },
   { path: 'logout', component: LogoutComponent},
-  { path: 'detail/:id', component: DetailEventPageComponent}
+  { path: 'detail/:id', component: DetailEventPageComponent},
+  { path: 'edit-event/:id', component: EditEventComponent, canActivate: [AuthGuard]},
+  { path: 'event-form', component: EventFormComponent, canActivate: [AuthGuard]}
+
 
 ];
 
@@ -42,7 +47,9 @@ const routes: Routes = [
     LoginComponent,
     ParticipantsPageComponent,
     LogoutComponent,
-    DetailEventPageComponent
+    DetailEventPageComponent,
+    EditEventComponent,
+    EventFormComponent
     ],
   imports: [RouterModule.forRoot(routes), ReactiveFormsModule, FormsModule, CommonModule, SharedModule],
   exports: [RouterModule],

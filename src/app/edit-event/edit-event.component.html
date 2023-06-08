@@ -1,0 +1,11 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+<h2> Editer {{ event?.name }}</h2>
+
+<p *ngIf="event" class="center">
+
+                <img [src]="event.picture" >
+
+</p>
+
+<app-event-form *ngIf="event" [event]="event"></app-event-form>

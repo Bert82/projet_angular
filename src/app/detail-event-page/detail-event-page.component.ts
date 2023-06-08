@@ -33,9 +33,9 @@ export class DetailEventPageComponent {
     this._router.navigate(['/event']);
   }
 
-  Edit()
+  Edit(event: Event)
   {
-    this._router.navigate(['/participants']);
+    this._router.navigate(['/edit-event',event.id]);
   }
 
 
