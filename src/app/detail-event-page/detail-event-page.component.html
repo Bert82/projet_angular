@@ -1,0 +1,49 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+<div *ngIf="event" class="row">
+    <div class="col s12 m8 offset-m2">
+    <h2 class="header center">{{ event.name }}</h2>
+    <div class="card horizontal hoverable">
+      <div class="card-image">
+        <img [src]="event.picture">
+      </div>
+      <div class="card-stacked">
+        <div class="card-content">
+          <table class="bordered striped">
+            <tbody>
+              <tr>
+                <td>Nom</td>
+                <td><strong>{{ event.name }}</strong></td>
+              </tr>
+              <tr>
+                <td>Discrance</td>
+                <td><strong>{{ event.distance }}</strong></td>
+              </tr>
+              <tr>
+                <td>Lieu</td>
+                <td><strong>{{ event.lieu }}</strong></td>
+              </tr>
+              <tr>
+                <td>Types</td>
+                  <td><strong>{{ event.types }}</strong></td>
+                
+              </tr>
+              <tr>
+                <td>Date de création</td>
+                <td><em>{{ event.created | date:"dd/MM/yyyy" }}</em></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="card-action">
+          <a (click)="Retour()">Retour</a>
+        </div>
+        <div class="card-action">
+          <a (click)="Edit()">Modifier</a>
+        </div>
+      </div>
+    </div>
+    </div>
+    </div>
+    <h4 *ngIf='!event' class="center">Aucun evènement à afficher !</h4>
+

@@ -13,7 +13,7 @@ import { RegistrationComponent } from './registration/registration.component';
 import { AuthGuard } from './auth.guard';
 import { SharedModule } from './shared/shared.module';
 import { LogoutComponent } from './logout/logout.component';
-
+import { DetailEventPageComponent } from './detail-event-page/detail-event-page.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/envent', pathMatch: 'full' },
@@ -26,7 +26,8 @@ const routes: Routes = [
   { path: 'inscription-rando', component: InscriptionRandoPageComponent, canActivate:[AuthGuard] },
   { path: 'event', component: EventPageComponent, canActivate:[AuthGuard] },
   { path: 'participants', component: ParticipantsPageComponent, canActivate: [AuthGuard]},
-  {path: 'logout', component: LogoutComponent}
+  { path: 'logout', component: LogoutComponent},
+  { path: 'detail/:id', component: DetailEventPageComponent}
 
 ];
 
@@ -40,7 +41,8 @@ const routes: Routes = [
     RegistrationComponent,
     LoginComponent,
     ParticipantsPageComponent,
-    LogoutComponent
+    LogoutComponent,
+    DetailEventPageComponent
     ],
   imports: [RouterModule.forRoot(routes), ReactiveFormsModule, FormsModule, CommonModule, SharedModule],
   exports: [RouterModule],

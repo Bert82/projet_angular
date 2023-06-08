@@ -3,7 +3,6 @@ import { Evenement } from './event-list';
 import { Router } from '@angular/router';
 import { EventService } from '../event/event.service';
 
-
 export class Event {
   id: number;
   distance: number;
@@ -15,13 +14,13 @@ export class Event {
 }
 
 
+
 @Component({
   selector: 'app-event-page',
   templateUrl: './event-page.component.html',
   styleUrls: ['./event-page.component.css']
 })
-export class EventPageComponent implements OnInit {
-
+export class EventPageComponent {
   EventList: Event[] = Evenement;
  
   constructor 
@@ -40,6 +39,5 @@ export class EventPageComponent implements OnInit {
     this.router.navigate(['/detail', event.id]);
   }
     
-  
-  
+
 }
