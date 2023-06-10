@@ -8,7 +8,7 @@ import { Router } from '@angular/router';
   templateUrl: './event-form.component.html',
   styleUrls: ['./event-form.component.css']
 })
-export class EventFormComponent {
+export class EventFormComponent implements OnInit {
   @Input() event: Event;
 
 type : string[];
@@ -46,7 +46,7 @@ isTypesValid(type: string): boolean
 OnSubmit()
 {
   console.log('submit form!');
-  this.router.navigate(['event', this.event.id]);
+  this.router.navigate(['/detail', this.event.id]);
 
 }
 

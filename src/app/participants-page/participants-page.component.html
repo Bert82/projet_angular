@@ -1,5 +1,5 @@
 <div class="card">
-  <p-table [value]="users" [tableStyle]="{ 'min-width': '50rem' }" >
+  <p-table [value]="registerData" [tableStyle]="{ 'min-width': '50rem' }" >
     <ng-template pTemplate="header">
       <tr>
         <th>Nom</th>
@@ -11,7 +11,7 @@
       </tr>
     </ng-template>
     <ng-template pTemplate="body" let-user>
-      <tr *ngFor="let user of users">
+      <tr *ngFor="let user of registerData">
         <td>{{ user.firstName}}</td>
         <td>{{ user.lastName }}</td>
         <td>{{ user.birthday }}</td>

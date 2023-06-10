@@ -1,9 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { FormControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { LocalStorageServiceService } from '../local-storage-service.service';
 import { Router } from '@angular/router';
 import { ConfirmationService, MessageService} from 'primeng/api';
-import { AuthService } from '../services/auth.service';
 
 
 
@@ -13,16 +12,14 @@ import { AuthService } from '../services/auth.service';
   styleUrls: ['./inscription-page.component.css'],
   providers: [ConfirmationService, MessageService]
 })
-export class InscriptionPageComponent implements OnInit{
+export class InscriptionPageComponent {
   inscriptionForm: FormGroup;
   formData: any[] =[];
   
-   
   
 constructor(
-  private readonly localStorageService: LocalStorageServiceService,
+  private _localStorageService: LocalStorageServiceService,
   private readonly router: Router,
-  private readonly _authService: AuthService,
   private formBuilder: FormBuilder
 ) { 
    this.inscriptionForm = this.formBuilder.group({
@@ -32,28 +29,19 @@ constructor(
     email: ['',Validators.required],
     adresse: ['',Validators.required],
     ville: ['',Validators.required],
+    event: ['', Validators],
    
   })
-}
-  
-ngOnInit(){ 
-    const currentUser = this._authService.currentUser;
-    console.log(currentUser)
-      this.inscriptionForm.patchValue({
-        firstName: currentUser?.firstName,
-        lastName: currentUser?.lastName,
-        birthday: currentUser && currentUser.birthday ? (currentUser.birthday) : '',
-        email: currentUser?.email
-
-      });
 }
 
 OnSubmit() {
   
-  if (this.inscriptionForm.valid) {
-    const formData = this.inscriptionForm.value;
-    this.formData.push(formData);
-    this.inscriptionForm.reset();
+   if (this.inscriptionForm.valid) {
+   const formData = this.inscriptionForm.value;
+   const registerData = this._localStorageService.getItem('registerData') || [];
+   registerData.push(formData);
+   this._localStorageService.setItem('registerData', registerData);
+   this.inscriptionForm.reset();
   }
 }
 

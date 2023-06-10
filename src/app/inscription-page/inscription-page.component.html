@@ -1,6 +1,6 @@
 <div class="component-class">
 <div class="card flex justify-content-center">
-  <p-card header="Inscription au trek" [style]="{ width: '660px' }">
+  <p-card header="Inscription" [style]="{ width: '660px' }">
     <form [formGroup]="inscriptionForm" (ngSubmit)="OnSubmit()">
       <div class="card">
         <div class="field grid">
@@ -91,7 +91,7 @@
               id="event"
               type="text"
               placeholder="Treck" readonly
-              formControlName="ville"
+              formControlName="event"
               class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full"
             />
           </div>
@@ -118,7 +118,7 @@
 <div>
 </div>
 
-    <div *ngFor="let data of formData" class="flex">
+    <div *ngFor="let data of formData" >
       <p-table [value]="formData" [tableStyle]="{ 'min-width': '50rem' }">
         <ng-template pTemplate="header">
             <tr>
