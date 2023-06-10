@@ -1,8 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { InscriptionPageComponent } from './inscription-page/inscription-page.component';
-import { InscriptionMarathonPageComponent } from './inscription-marathon-page/inscription-marathon-page.component';
-import { InscriptionRandoPageComponent } from './inscription-rando-page/inscription-rando-page.component';
 import { ParticipantsPageComponent } from './participants-page/participants-page.component';
 import { EventPageComponent } from './event-page/event-page.component';
 import { HomePageComponent } from './home-page/home-page.component';
@@ -16,6 +14,7 @@ import { LogoutComponent } from './logout/logout.component';
 import { DetailEventPageComponent } from './detail-event-page/detail-event-page.component';
 import { EditEventComponent } from './edit-event/edit-event.component';
 import { EventFormComponent } from './event-form/event-form.component';
+import { CreatEventComponent } from './creat-event/creat-event.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/envent', pathMatch: 'full' },
@@ -24,23 +23,19 @@ const routes: Routes = [
   
   { path: 'home', component: HomePageComponent},
   { path: 'inscription', component: InscriptionPageComponent},
-  { path: 'inscription-marathon', component: InscriptionMarathonPageComponent },
-  { path: 'inscription-rando', component: InscriptionRandoPageComponent },
   { path: 'event', component: EventPageComponent },
   { path: 'participants', component: ParticipantsPageComponent },
   { path: 'logout', component: LogoutComponent},
   { path: 'detail/:id', component: DetailEventPageComponent},
   { path: 'edit-event/:id', component: EditEventComponent, canActivate: [AuthGuard]},
-  { path: 'event-form', component: EventFormComponent, canActivate: [AuthGuard]}
-
+  { path: 'event-form', component: EventFormComponent, canActivate: [AuthGuard]},
+  { path: 'creat-event', component: CreatEventComponent, canActivate: [AuthGuard]}
 
 ];
 
 @NgModule({
   declarations: [
     InscriptionPageComponent,
-    InscriptionMarathonPageComponent,
-    InscriptionRandoPageComponent,
     EventPageComponent,
     HomePageComponent,
     RegistrationComponent,
@@ -49,7 +44,8 @@ const routes: Routes = [
     LogoutComponent,
     DetailEventPageComponent,
     EditEventComponent,
-    EventFormComponent
+    EventFormComponent,
+    CreatEventComponent
     ],
   imports: [RouterModule.forRoot(routes), ReactiveFormsModule, FormsModule, CommonModule, SharedModule],
   exports: [RouterModule],

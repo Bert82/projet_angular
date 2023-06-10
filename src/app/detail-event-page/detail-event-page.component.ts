@@ -26,6 +26,12 @@ export class DetailEventPageComponent {
     }
   }
 
+  Delete(event: Event)
+  {
+    this.eventService.deleteEventById(event.id)  
+    this._router.navigate(['/event']);
+  }
+
   Retour()
   {
     this._router.navigate(['/event']);

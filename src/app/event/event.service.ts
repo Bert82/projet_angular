@@ -5,6 +5,8 @@ import { Evenement } from '../event-page/event-list';
   providedIn: 'root'
 })
 export class EventService {
+private storageKey = 'events';
+
 
   constructor() { }
 
@@ -21,6 +23,26 @@ getEventById(eventId: number): Event|undefined
 getEventByType(): string[] 
 {
   return ['Treck', 'Marathon', 'Rando'];
+}
+
+deleteEventById(eventId : number)
+{
+  const index = Evenement.findIndex(event => event.id === eventId);
+  if (index !== -1) {
+    Evenement.splice(index, 1);
+  }
+}
+
+getEvents(): Event[] {
+  const storedEvents = localStorage.getItem(this.storageKey);
+  return storedEvents ? JSON.parse(storedEvents) : [];
+}
+
+create(event: Event){
+  Evenement.push(event);
+  const storedEvents = this.getEvents();
+  storedEvents.push(event);
+  localStorage.setItem(this.storageKey, JSON.stringify(storedEvents));
 }
 
 }

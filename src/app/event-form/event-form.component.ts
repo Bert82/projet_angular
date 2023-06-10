@@ -2,6 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { Event } from '../event-page/event-page.component';
 import { EventService } from '../event/event.service';
 import { Router } from '@angular/router';
+import { Evenement } from '../event-page/event-list';
 
 @Component({
   selector: 'app-event-form',
@@ -10,6 +11,8 @@ import { Router } from '@angular/router';
 })
 export class EventFormComponent implements OnInit {
   @Input() event: Event;
+  Evenement = Evenement;
+  isCreatEvent: boolean;
 
 type : string[];
 
@@ -21,6 +24,7 @@ constructor(
 
 ngOnInit() {
   this.type = this.eventService.getEventByType();
+  this.isCreatEvent = this.router.url.includes('creat');  //verifier si on est dans un ajout ou non
   }
 
 
@@ -45,9 +49,14 @@ isTypesValid(type: string): boolean
 
 OnSubmit()
 {
+  if(this.isCreatEvent)
+  {
+    this.eventService.create(this.event)
+    this.router.navigate(['/event']);
+  } else {
   console.log('submit form!');
   this.router.navigate(['/detail', this.event.id]);
-
+}
 }
 
   

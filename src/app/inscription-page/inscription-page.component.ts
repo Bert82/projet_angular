@@ -4,7 +4,7 @@ import { LocalStorageServiceService } from '../local-storage-service.service';
 import { Router } from '@angular/router';
 import { ConfirmationService, MessageService} from 'primeng/api';
 import { Evenement } from '../event-page/event-list';
-import { EventService } from '../event/event.service';
+
 
 
 

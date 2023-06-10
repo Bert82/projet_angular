@@ -5,50 +5,30 @@
       <div class="col s8 offset-s2">
         <div class="card-panel">
     
-          <!-- event name -->
           <div class="form-group">
             <label for="name">Nom</label>
             <input type="text" class="form-control" id="name"
-                    required
-                    pattern="^[a-zA-Z0-9àéèç]{1,25}$"
+                  required
                    [(ngModel)]="event.name" name="name"
                    #name="ngModel">
-    
-            <div [hidden]="name.valid || name.pristine"
-                  class="card-panel red accent-1">
-                  Le nom de l'évènement doir comprendre max 25 carectères.
-            </div>
           </div>
     
-          <!-- event distance -->
           <div class="form-group">
             <label for="hp">distance</label>
             <input type="number" class="form-control" id="distance"
                     required
-                    pattern="^[0-3]{1,3}$"
-                   [(ngModel)]="event.distance" name="distance"
+                  [(ngModel)]="event.distance" name="distance"
                    #distance="ngModel">
-             <div [hidden]="distance.valid || distance.pristine"
-                   class="card-panel red accent-1">
-                   la distance doit etre comprise entre 0 et 299.
-             </div>
-          </div>
+           </div>
 
-          <!-- Event lieux -->
         <div class="form-group">
           <label for="lieu">Lieu</label>
           <input type="text" class="form-control" id="lieu"
                   required
-                  pattern="^[a-zA-Z0-9àéèç]{1,25}$"
                  [(ngModel)]="event.lieu" name="lieu"
                  #lieux="ngModel">
-           <div [hidden]="lieux.valid || lieux.pristine"
-                 class="card-panel red accent-1">
-                 le lieux ne peux contenir que 25 caractères
-           </div>
-        </div>
+          </div>
        
-          <!-- event types -->
           <form class="form-group">
             <label for="types">discipline</label>
             <p *ngFor="let type of type">
@@ -59,8 +39,7 @@
                   [value]="type"
                   [checked]="Type(type)"
                   [disabled]="!isTypesValid(type)"
-                  
-                  />
+                   />
                   <span [attr.for]="type">
                     <div class="{{ type }}">
                       {{ type }}
@@ -75,7 +54,7 @@
           <div class="section center">
             <button type="submit"
               class="waves-effect waves-light btn"
-              >
+              [disabled]="!eventForm.form.valid">
               Valider</button>
           </div>
     
