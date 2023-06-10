@@ -11,7 +11,7 @@
     </div>
     <div class="card-stacked">
       <div class="card-content">
-        <p>{{ event.name }}</p>
+        <p>{{ event.name | uppercase }}</p>
         <p><small>{{ event.created | date }}</small></p><br><br>
         <p-button type="success" label="s'inscrire" routerLink="/inscription"></p-button>
        

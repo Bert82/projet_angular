@@ -20,7 +20,7 @@ export class Event {
   templateUrl: './event-page.component.html',
   styleUrls: ['./event-page.component.css']
 })
-export class EventPageComponent {
+export class EventPageComponent implements OnInit{
   EventList: Event[] = Evenement;
  
   constructor 
@@ -38,6 +38,5 @@ export class EventPageComponent {
   {
     this.router.navigate(['/detail', event.id]);
   }
-    
-
+  
 }

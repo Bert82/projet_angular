@@ -3,6 +3,9 @@ import { FormControl, FormBuilder, FormGroup, Validators } from '@angular/forms'
 import { LocalStorageServiceService } from '../local-storage-service.service';
 import { Router } from '@angular/router';
 import { ConfirmationService, MessageService} from 'primeng/api';
+import { Evenement } from '../event-page/event-list';
+import { EventService } from '../event/event.service';
+
 
 
 
@@ -15,7 +18,7 @@ import { ConfirmationService, MessageService} from 'primeng/api';
 export class InscriptionPageComponent {
   inscriptionForm: FormGroup;
   formData: any[] =[];
-  
+  Evenement = Evenement;
   
 constructor(
   private _localStorageService: LocalStorageServiceService,
@@ -29,7 +32,7 @@ constructor(
     email: ['',Validators.required],
     adresse: ['',Validators.required],
     ville: ['',Validators.required],
-    event: ['', Validators],
+    event: ['',Validators.required],
    
   })
 }

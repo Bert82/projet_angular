@@ -24,7 +24,7 @@ export class ParticipantsPageComponent implements OnInit {
 
   ngOnInit() {
     const localStorageData = this.localStorageService.getItem('registerData');
-    console.log(localStorageData);
+    console.log(localStorageData )
     if (localStorageData) {
       this.registerData = localStorageData;
     }

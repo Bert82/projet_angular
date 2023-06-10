@@ -87,13 +87,10 @@
             >Dicipline</label
           >
           <div class="col">
-            <input
-              id="event"
-              type="text"
-              placeholder="Treck" readonly
-              formControlName="event"
-              class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full"
-            />
+            <select id="event" formControlName="event" class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full">
+              <option *ngFor="let event of Evenement" [value]="event.name">{{ event.name }}</option>
+              
+            </select>
           </div>
         </div>
 
@@ -118,7 +115,7 @@
 <div>
 </div>
 
-    <div *ngFor="let data of formData" >
+ <!--   <div *ngFor="let data of formData" >
       <p-table [value]="formData" [tableStyle]="{ 'min-width': '50rem' }">
         <ng-template pTemplate="header">
             <tr>
@@ -135,4 +132,4 @@
         </tr>
       </ng-template>
     </p-table>
-  </div>
+  </div>-->

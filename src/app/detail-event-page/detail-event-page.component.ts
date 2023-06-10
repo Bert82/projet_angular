@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-//import { Evenement } from '../participants-page/paricipant-list'; 
 import { Event } from '../event-page/event-page.component';
 import { EventService } from '../event/event.service';
 
@@ -21,7 +20,6 @@ export class DetailEventPageComponent {
   ){}
 
   ngOnInit(): void {
-    //this.EventList = Evenement;
     const eventId: string |null = this.router.snapshot.paramMap.get('id');
     if (eventId){
     this.event = this.eventService.getEventById(+eventId);
