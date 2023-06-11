@@ -22,7 +22,7 @@ getEventById(eventId: number): Event|undefined
 
 getEventByType(): string[] 
 {
-  return ['Treck', 'Marathon', 'Rando'];
+  return ['Treck', 'Marathon', 'Rando', 'course'];
 }
 
 deleteEventById(eventId : number)
@@ -37,6 +37,8 @@ getEvents(): Event[] {
   const storedEvents = localStorage.getItem(this.storageKey);
   return storedEvents ? JSON.parse(storedEvents) : [];
 }
+
+
 
 create(event: Event){
   Evenement.push(event);

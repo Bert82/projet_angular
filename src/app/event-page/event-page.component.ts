@@ -51,11 +51,8 @@ export class EventPageComponent implements OnInit{
 
   ngOnInit() {
     this.EventList = this.eventService.getEventList();
-    //const localStorageData = this.localStorageService.getItem('events');
-    //console.log(localStorageData )
-  //  if (localStorageData) {
-   //   this.events = localStorageData;
-   // }
+    this.events = this.eventService.getEvents();
+   
   
   }
   

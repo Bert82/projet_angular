@@ -50,7 +50,11 @@ isTypesValid(type: string): boolean
 OnSubmit()
 {
   if(this.isCreatEvent)
-  {
+  { // générer un ID unique
+    const lastEventId = localStorage.getItem('lastEventId');
+    const eventId = lastEventId ? parseInt(lastEventId) + 1 : 4;
+    this.event.id = eventId
+
     this.eventService.create(this.event)
     this.router.navigate(['/event']);
   } else {

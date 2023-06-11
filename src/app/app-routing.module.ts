@@ -26,7 +26,7 @@ const routes: Routes = [
   { path: 'event', component: EventPageComponent },
   { path: 'participants', component: ParticipantsPageComponent },
   { path: 'logout', component: LogoutComponent},
-  { path: 'detail/:id', component: DetailEventPageComponent},
+  { path: 'detail/:id', component: DetailEventPageComponent, canActivate: [AuthGuard]},
   { path: 'edit-event/:id', component: EditEventComponent, canActivate: [AuthGuard]},
   { path: 'event-form', component: EventFormComponent, canActivate: [AuthGuard]},
   { path: 'creat-event', component: CreatEventComponent, canActivate: [AuthGuard]}
