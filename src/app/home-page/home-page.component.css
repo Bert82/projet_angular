@@ -1,0 +1,16 @@
+.center {
+    text-align: center;
+}
+
+.bandeau{
+    text-align: center;
+}
+
+.justify{
+    text-align: justify;
+}
+
+.align{
+    float:right;
+    position: relative;
+}
