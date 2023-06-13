@@ -17,7 +17,7 @@ import { EventFormComponent } from './event-form/event-form.component';
 import { CreatEventComponent } from './creat-event/creat-event.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/envent', pathMatch: 'full' },
+  { path: '', redirectTo: '/event', pathMatch: 'full' },
   { path: 'login', component: LoginComponent },
   { path: 'registration', component: RegistrationComponent },
   

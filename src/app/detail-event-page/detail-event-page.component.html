@@ -25,7 +25,9 @@
               </tr>
               <tr>
                 <td>Types</td>
-                  <td><strong>{{ event.types }}</strong></td>
+                  <td><strong><span *ngFor="let type of event.types">
+                    <span [style.color]="type | color">{{ type }}</span>
+                  </span></strong></td>
                 
               </tr>
               <tr>

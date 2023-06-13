@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Event } from '../event-page/event-page.component';
 import { EventService } from '../event/event.service';
+import { ColorPipe } from '../color.pipe';
 
 
 @Component({

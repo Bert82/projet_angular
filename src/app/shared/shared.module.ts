@@ -10,9 +10,10 @@ import { ConfirmDialogModule } from 'primeng/confirmdialog';
 import { TableModule } from 'primeng/table';
 import { CheckboxModule } from 'primeng/checkbox';
 import { MenubarModule } from 'primeng/menubar';
+import { ColorPipe } from '../color.pipe';
 
 @NgModule({
-  declarations: [],
+  declarations: [ColorPipe],
   imports: [
     ButtonModule,
     CardModule,
@@ -24,7 +25,8 @@ import { MenubarModule } from 'primeng/menubar';
     ConfirmDialogModule,
     TableModule,
     CheckboxModule,
-    MenubarModule
+    MenubarModule, 
+    
     
   ],
   exports:[
@@ -39,7 +41,7 @@ import { MenubarModule } from 'primeng/menubar';
     ConfirmDialogModule,
     TableModule,
     CheckboxModule,
-    MenubarModule
+    MenubarModule, ColorPipe
     
 
   ]

@@ -41,7 +41,7 @@
                   [disabled]="!isTypesValid(type)"
                    />
                   <span [attr.for]="type">
-                    <div class="{{ type }}">
+                    <div [style.color]="type | color" class="{{ type }}">
                       {{ type }}
                     </div>
                   </span>

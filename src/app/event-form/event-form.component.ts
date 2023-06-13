@@ -3,6 +3,8 @@ import { Event } from '../event-page/event-page.component';
 import { EventService } from '../event/event.service';
 import { Router } from '@angular/router';
 import { Evenement } from '../event-page/event-list';
+import { ColorPipe } from '../color.pipe';
+
 
 @Component({
   selector: 'app-event-form',
@@ -18,7 +20,8 @@ type : string[];
 
 constructor( 
   private eventService : EventService,
-  private router: Router
+  private router: Router,
+  ColorPipe : ColorPipe
   ){}
 
 
